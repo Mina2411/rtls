@@ -30,9 +30,7 @@ module apb_uart #(
     output types_amba_pkg::apb_out_type o_apbo,             // APB Bridge to Slave interface
     input logic i_rd,
     output logic o_td,
-    output logic o_irq,
-    //output logic [7:0] o_char_rx,                           //received character for simulation purposes
-    output logic [7:0] o_char_tx                            //transmitted character for simulation purposes
+    output logic o_irq
 );
 
 import types_amba_pkg::*;
@@ -511,8 +509,6 @@ begin: comb_proc
 
     o_td = r.tx_shift[0];
     o_irq = (r.tx_ip | r.rx_ip);
-    //o_char_rx = vb_rx_fifo_rdata;
-    o_char_tx = vb_tx_fifo_rdata;
 
     rin.scaler = v.scaler;
     rin.scaler_cnt = v.scaler_cnt;

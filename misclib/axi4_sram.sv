@@ -26,12 +26,7 @@ module axi4_sram
     input types_amba_pkg::mapinfo_type i_mapinfo,
     output types_amba_pkg::dev_config_type cfg,
     input types_amba_pkg::axi4_slave_in_type i,
-    output types_amba_pkg::axi4_slave_out_type o,
-    output [0:abits-1] w_req_addr,              //added test signals
-    output [63:0] r_data,                       //added test signals
-    output w_req,                               //added test signals
-    output [7:0] w_wstrb,                       //added test signals
-    output [63:0] w_data                        //added test signals
+    output types_amba_pkg::axi4_slave_out_type o
 );
 
 import types_amba_pkg::*;
@@ -44,11 +39,6 @@ logic [CFG_SYSBUS_DATA_BITS-1:0] wb_req_wdata;       //64 bits
 logic [CFG_SYSBUS_DATA_BYTES-1:0] wb_req_wstrb;      //8 bits
 logic w_req_last;
 logic [CFG_SYSBUS_DATA_BITS-1:0] wb_rdata;           //64 bits
-assign w_req_addr = wb_req_addr;            //assign test signals
-assign r_data = wb_rdata;                   //assign test signals
-assign w_req = w_req_write;                 //assign test signals
-assign w_wstrb = wb_req_wstrb;              //assign test signals
-assign w_data = wb_req_wdata;               //assign test signals
 
 axi_slv #(
     .async_reset(async_reset),

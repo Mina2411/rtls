@@ -38,8 +38,6 @@ module riscv_soc (
   //! UART1 signals:
   input             i_uart1_rd,
   output            o_uart1_td,
-  //output [7:0]      o_char_tx,            //added test signals
-  //output [7:0]      o_char_rx,          //added test signals
     // SPI SD-card signals:
     output logic o_spi_cs,
     output logic o_spi_sclk,
@@ -52,16 +50,7 @@ module riscv_soc (
   output types_amba_pkg::mapinfo_type o_prci_pmapinfo,
   output types_amba_pkg::apb_in_type o_prci_apbi,
   input types_amba_pkg::apb_out_type i_prci_apbo
-  //New slave test signals
-//  output types_amba_pkg::mapinfo_type new_slv_map,              //added test signals
-//  output types_amba_pkg::dev_config_type new_slv_cfg,           //added test signals
-//  output types_amba_pkg::axi4_slave_in_type new_slv_i,          //added test signals
-//  output types_amba_pkg::axi4_slave_out_type new_slv_o,         //added test signals
-//  output [0:3] w_req_addr,                                      //added test signals
-//  output [63:0] r_data,                                         //added test signals
-//  output w_req,                                                 //added test signals
-//  output [7:0] w_wstrb,                                         //added test signals
-//  output [63:0] w_data                                          //added test signals
+
   // DDR signal:
 //  output types_amba_pkg::mapinfo_type o_ddr_pmapinfo,
 //  output types_amba_pkg::apb_in_type o_ddr_apbi,
@@ -202,34 +191,7 @@ Workgroup #(
     .cfg(dev_pnp[SOC_PNP_SRAM]),
     .i(axisi[CFG_BUS0_XSLV_SRAM]),
     .o(axiso[CFG_BUS0_XSLV_SRAM])
-//    .w_req_addr(w_req_addr),               //added test signals
-//    .r_data(r_data),                       //added test signals
-//    .w_req(w_req),                         //added test signals
-//    .w_wstrb(w_wstrb),                     //added test signals
-//    .w_data(w_data)                        //added test signals
   );
-  
-  axi4_new_slave #(
-    .async_reset(CFG_ASYNC_RESET),
-    .abits(CFG_New_slave_LOG2_SIZE)
-  ) new_slave (
-    .clk(i_sys_clk),
-    .nrst(i_sys_nrst),
-    .i_mapinfo(bus0_mapinfo[CFG_BUS0_XSLV_NEW]),
-    .cfg(dev_pnp[SOC_PNP_NEW_slave]),
-    .i(axisi[CFG_BUS0_XSLV_NEW]),
-    .o(axiso[CFG_BUS0_XSLV_NEW])
-//    .w_req_addr(w_req_addr),               //added test signals
-//    .r_data(r_data),                       //added test signals
-//    .w_req(w_req),                         //added test signals
-//    .w_wstrb(w_wstrb),                     //added test signals
-//    .w_data(w_data)                        //added test signals
-  );
-  //assign test signals
-//  assign new_slv_map = bus0_mapinfo[CFG_BUS0_XSLV_SRAM]; 
-//  assign new_slv_cfg = dev_pnp[SOC_PNP_SRAM];
-//  assign new_slv_i = axisi[CFG_BUS0_XSLV_SRAM];
-//  assign new_slv_o = axiso[CFG_BUS0_XSLV_SRAM];
  
   ////////////////////////////////////
   //! @brief Core local interrupt controller (CLINT).

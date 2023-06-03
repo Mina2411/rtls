@@ -30,7 +30,6 @@ localparam int SOC_PNP_GROUP0 = 1;
 localparam int SOC_PNP_BOOTROM = 2;
 localparam int SOC_PNP_SRAM = 3;
 localparam int SOC_PNP_DDR = 4;
-//localparam int SOC_PNP_NEW_slave = 4;
 localparam int SOC_PNP_GPIO = 5;
 localparam int SOC_PNP_CLINT = 6;
 localparam int SOC_PNP_PLIC = 7;
@@ -39,8 +38,7 @@ localparam int SOC_PNP_PBRIDGE0 = 9;
 localparam int SOC_PNP_DMI = 10;
 localparam int SOC_PNP_UART1 = 11;
 localparam int SOC_PNP_SPI = 12;
-localparam int SOC_PNP_NEW_slave = 13;
-localparam int SOC_PNP_TOTAL = 14;
+localparam int SOC_PNP_TOTAL = 13;
 
 localparam int CFG_SOC_UART1_LOG2_FIFOSZ = 4;
 

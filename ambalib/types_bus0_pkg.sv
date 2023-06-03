@@ -47,10 +47,8 @@ localparam int CFG_BUS0_XSLV_PLIC = 3;
 localparam int CFG_BUS0_XSLV_PBRIDGE = 4;
 // External DDR
 localparam int CFG_BUS0_XSLV_DDR = 5;
-// New slave peripheral
-localparam int CFG_BUS0_XSLV_NEW = 6;
 // Total number of the slaves devices.
-localparam int CFG_BUS0_XSLV_TOTAL = 7;
+localparam int CFG_BUS0_XSLV_TOTAL = 6;
 
 typedef axi4_master_in_type bus0_xmst_in_vector[0:CFG_BUS0_XMST_TOTAL - 1];
 typedef axi4_master_out_type bus0_xmst_out_vector[0:CFG_BUS0_XMST_TOTAL - 1];
@@ -65,8 +63,7 @@ const bus0_mapinfo_vector CFG_BUS0_MAP = '{
     '{64'h0000008000000, 64'h0000008200000},                // 2, sram, 2MB
     '{64'h000000C000000, 64'h0000010000000},                // 3, plic
     '{64'h0000010000000, 64'h0000010100000},                // 4, APB bridge: uart1
-    '{64'h0000080000000, 64'h00000C0000000},                // 5, ddr, 512 MB
-    '{64'h0000100000000, 64'h0000110000000}                 // 6, new slave peripheral  
+    '{64'h0000080000000, 64'h00000C0000000}                 // 5, ddr, 512 MB 
 };
 
 endpackage: types_bus0_pkg

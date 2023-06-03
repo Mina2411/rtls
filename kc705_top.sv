@@ -37,19 +37,7 @@ module kc705_top #(
     //! UART1 signals:
     input                     i_uart1_rd,
     output                    o_uart1_td,
-    //output [7:0]              o_char_rx,        //added test signals
-    //output [7:0]              o_char_tx,        //added test signals
-    //added test signals for testing slave peripheral
-//    output types_amba_pkg::mapinfo_type new_slv_map,              //added test signals
-//    output types_amba_pkg::dev_config_type new_slv_cfg,           //added test signals
-//    output types_amba_pkg::axi4_slave_in_type new_slv_i,          //added test signals
-//    output types_amba_pkg::axi4_slave_out_type new_slv_o,         //added test signals
-//    output [0:3] w_req_addr,                                      //added test signals
-//    output [63:0] r_data,                                         //added test signals
-//    output w_req,                                                 //added test signals
-//    output [7:0] w_wstrb,                                         //added test signals
-//    output [63:0] w_data,                                         //added test signals
-    // SPI SD-card signals:
+
     output logic o_spi_cs,
     output logic o_spi_sclk,
     output logic o_spi_mosi,
@@ -200,18 +188,6 @@ module kc705_top #(
     //! UART1 signals:
     .i_uart1_rd(ib_uart1_rd),
     .o_uart1_td(ob_uart1_td),
-    //.o_char_tx(o_char_tx),
-    //.o_char_rx(o_char_rx),
-    //added test signals for testing new slave peripheral
-//    .new_slv_map(new_slv_map),            //added test signals
-//    .new_slv_cfg(new_slv_cfg),            //added test signals
-//    .new_slv_i(new_slv_i),                //added test signals
-//    .new_slv_o(new_slv_o),                //added test signals
-//    .w_req_addr(w_req_addr),              //added test signals
-//    .r_data(r_data),                      //added test signals
-//    .w_req(w_req),                        //added test signals
-//    .w_wstrb(w_wstrb),                    //added test signals
-//    .w_data(w_data),                      //added test signals
     // SPI SD-card signals:
     .o_spi_cs(ob_spi_cs),
     .o_spi_sclk(ob_spi_sclk),

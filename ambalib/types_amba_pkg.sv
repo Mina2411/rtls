@@ -57,8 +57,6 @@ localparam bit [15:0] OPTIMITECH_PNP = 16'h0074;
 localparam bit [15:0] OPTIMITECH_SPI_FLASH = 16'h0075;
 // General purpose IOs
 localparam bit [15:0] OPTIMITECH_GPIO = 16'h0076;
-//// New slave peripheral ID
-//localparam bit [15:0] OPTIMITECH_New_slave = 16'h0077;
 // rs-232 UART Device ID
 localparam bit [15:0] OPTIMITECH_UART = 16'h007a;
 // Core local interrupt controller
@@ -71,8 +69,6 @@ localparam bit [15:0] OPTIMITECH_AXI2APB_BRIDGE = 16'h0085;
 localparam bit [15:0] OPTIMITECH_AXI_INTERCONNECT = 16'h0086;
 // APB PLL and Register Interface
 localparam bit [15:0] OPTIMITECH_PRCI = 16'h0087;
-// New slave peripheral ID
-localparam bit [15:0] OPTIMITECH_New_slave = 16'h007e;
 // DDR controller status registers
 localparam bit [15:0] OPTIMITECH_DDRCTRL = 16'h0088;
 // SPI controller (SD-card in SPI mode)
